@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ocean Guardian - Protect Our Seas | Marine Conservation</title>
-    <meta name="description" content="Join Ocean Guardian's global movement to protect marine ecosystems, reduce plastic pollution, and conserve our oceans for future generations.">
+    <title>Ocean Guardians - Protect Our Seas</title>
+    <meta name="description" content="Join Ocean Guardians in protecting marine ecosystems, reducing plastic pollution, and conserving our oceans for future generations.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Reset and Variables */
         * {
             margin: 0;
             padding: 0;
@@ -17,71 +15,46 @@
         }
 
         :root {
-            --primary: #1a6dbe;
-            --primary-dark: #0d4b8d;
-            --primary-light: #4a9fe3;
-            --secondary: #2ec4b6;
-            --accent: #ff9f1c;
-            --light: #e6f7ff;
+            --primary-blue: #1a6dbe;
+            --dark-blue: #0d4b8d;
+            --light-blue: #4a9fe3;
+            --teal: #2ec4b6;
+            --coral: #ff9f1c;
             --light-bg: #f0f9ff;
-            --dark: #0d2b4d;
-            --text: #1a3a5f;
-            --text-light: #4a6fa5;
             --white: #ffffff;
-            --shadow: 0 10px 30px rgba(26, 109, 190, 0.15);
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-            --border-radius: 16px;
-            --wave-color: rgba(255, 255, 255, 0.1);
+            --text-dark: #1a3a5f;
+            --text-light: #4a6fa5;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 12px;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--light);
-            color: var(--text);
-            line-height: 1.7;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(46, 196, 182, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(26, 109, 190, 0.05) 0%, transparent 20%);
         }
 
         h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             line-height: 1.2;
+            margin-bottom: 1rem;
         }
 
-        /* Wave Pattern Background */
-        .wave-pattern {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0.3;
-            background-image: 
-                radial-gradient(circle at 25% 25%, var(--wave-color) 2px, transparent 2px),
-                radial-gradient(circle at 75% 75%, var(--wave-color) 2px, transparent 2px);
-            background-size: 60px 60px;
-            background-position: 0 0, 30px 30px;
-            pointer-events: none;
+        p {
+            margin-bottom: 1.5rem;
         }
 
-        /* Header & Navigation */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 1rem 0;
-            box-shadow: 0 5px 20px rgba(13, 43, 77, 0.08);
-            transition: var(--transition);
-            border-bottom: 1px solid rgba(74, 159, 227, 0.1);
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
-        header.scrolled {
-            padding: 0.5rem 0;
-            box-shadow: 0 8px 25px rgba(13, 43, 77, 0.1);
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
 
         .container {
@@ -91,197 +64,139 @@
             padding: 0 20px;
         }
 
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            text-decoration: none;
-        }
-
-        .logo i {
-            color: var(--secondary);
-            font-size: 2.2rem;
-            transition: var(--transition);
-        }
-
-        .logo:hover i {
-            transform: rotate(-15deg) scale(1.1);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav ul li a {
-            color: var(--primary-dark);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        nav ul li a:hover {
-            color: var(--white);
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(26, 109, 190, 0.3);
-        }
-
-        nav ul li a.active {
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            color: var(--white);
-            box-shadow: 0 5px 15px rgba(26, 109, 190, 0.3);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(13, 43, 77, 0.85) 0%, rgba(26, 109, 190, 0.8) 100%), 
-                        url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(46, 196, 182, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(255, 159, 28, 0.1) 0%, transparent 50%);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            color: var(--white);
-            max-width: 800px;
-            padding: 4rem 0;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero h1 {
-            font-size: 3.8rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, #ffffff, #e6f7ff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-            max-width: 600px;
+        section {
+            padding: 60px 0;
         }
 
         /* Buttons */
         .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            display: inline-block;
+            background: linear-gradient(to right, var(--teal), var(--coral));
             color: var(--white);
-            padding: 1rem 2.5rem;
+            padding: 12px 28px;
             border-radius: 50px;
-            text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
             border: none;
             cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 8px 25px rgba(46, 196, 182, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .btn:hover::before {
-            left: 100%;
+            transition: all 0.3s ease;
+            text-align: center;
         }
 
         .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(46, 196, 182, 0.4);
-            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
         }
 
         .btn-outline {
             background: transparent;
             border: 2px solid var(--white);
             color: var(--white);
-            box-shadow: none;
         }
 
         .btn-outline:hover {
             background: var(--white);
-            color: var(--primary);
+            color: var(--primary-blue);
         }
 
-        /* Ocean-themed section divider */
-        .wave-divider {
-            position: relative;
-            height: 100px;
-            overflow: hidden;
-            background: transparent;
-        }
-
-        .wave-divider svg {
-            position: absolute;
-            bottom: 0;
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            top: 0;
             width: 100%;
-            height: 100%;
+            z-index: 100;
         }
 
-        /* Sections */
-        section {
-            padding: 100px 0;
-            position: relative;
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
         }
 
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+        }
+
+        .logo i {
+            color: var(--teal);
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav ul li a {
+            font-weight: 600;
+            color: var(--dark-blue);
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(26, 109, 190, 0.1);
+            color: var(--primary-blue);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark-blue);
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(13, 43, 77, 0.85), rgba(26, 109, 190, 0.8)), 
+                        url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 180px 0 100px;
+            margin-top: 70px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Section Titles */
         .section-title {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .section-title h2 {
-            font-size: 2.8rem;
-            color: var(--primary-dark);
-            margin-bottom: 1rem;
+            font-size: 2.2rem;
+            color: var(--dark-blue);
             position: relative;
             display: inline-block;
         }
@@ -289,296 +204,187 @@
         .section-title h2::after {
             content: '';
             position: absolute;
-            bottom: -15px;
+            bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 5px;
-            background: linear-gradient(to right, var(--secondary), var(--accent));
-            border-radius: 3px;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--teal), var(--coral));
+            border-radius: 2px;
         }
 
         .section-title p {
-            color: var(--text-light);
             max-width: 700px;
-            margin: 2rem auto 0;
-            font-size: 1.1rem;
+            margin: 1.5rem auto 0;
+            color: var(--text-light);
         }
 
-        /* About Section */
+        /* About */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 3rem;
             align-items: center;
-            margin-bottom: 4rem;
         }
 
         .about-img {
-            border-radius: var(--border-radius);
+            border-radius: var(--radius);
             overflow: hidden;
             box-shadow: var(--shadow);
-            position: relative;
-            border: 5px solid var(--white);
-        }
-
-        .about-img img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            transition: transform 0.8s ease;
-        }
-
-        .about-img:hover img {
-            transform: scale(1.05);
-        }
-
-        .about-img::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(26, 109, 190, 0.1), transparent);
         }
 
         .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-dark);
+            font-size: 1.8rem;
+            color: var(--dark-blue);
         }
 
-        .about-features {
-            margin: 2rem 0;
+        .feature-list {
+            margin: 1.5rem 0;
         }
 
         .feature-item {
             display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
         }
 
         .feature-item i {
-            color: var(--secondary);
-            font-size: 1.5rem;
-            margin-top: 5px;
-            flex-shrink: 0;
+            color: var(--teal);
         }
 
         /* Stats */
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
+            gap: 1.5rem;
+            margin-top: 3rem;
         }
 
-        .stat-item {
+        .stat-box {
             background: var(--white);
-            padding: 2.5rem 2rem;
-            border-radius: var(--border-radius);
+            padding: 2rem;
+            border-radius: var(--radius);
             text-align: center;
             box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            border-top: 5px solid var(--secondary);
+            border-top: 4px solid var(--teal);
         }
 
-        .stat-item:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(26, 109, 190, 0.15);
+        .stat-box i {
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
         }
 
-        .stat-item i {
-            font-size: 2.8rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            display: inline-block;
-            transition: var(--transition);
-        }
-
-        .stat-item:hover i {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .stat-item h3 {
-            font-size: 2.8rem;
-            color: var(--primary-dark);
+        .stat-box h3 {
+            font-size: 2.2rem;
+            color: var(--dark-blue);
             margin-bottom: 0.5rem;
-            font-weight: 700;
         }
 
         /* Initiatives */
         .initiatives {
-            background: linear-gradient(135deg, var(--light-bg) 0%, var(--white) 100%);
-            position: relative;
-        }
-
-        .initiatives::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 10px;
-            background: linear-gradient(to right, var(--secondary), var(--primary-light));
+            background-color: var(--white);
         }
 
         .initiatives-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+            gap: 2rem;
         }
 
         .initiative-card {
             background: var(--white);
-            border-radius: var(--border-radius);
+            border-radius: var(--radius);
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: var(--transition);
-            height: 100%;
-            border: 1px solid rgba(74, 159, 227, 0.2);
+            transition: transform 0.3s ease;
         }
 
         .initiative-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 25px 50px rgba(26, 109, 190, 0.15);
-            border-color: var(--primary-light);
+            transform: translateY(-10px);
         }
 
-        .initiative-img {
-            height: 250px;
+        .card-img {
+            height: 200px;
             overflow: hidden;
-            position: relative;
         }
 
-        .initiative-img img {
+        .card-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.8s ease;
         }
 
-        .initiative-card:hover .initiative-img img {
-            transform: scale(1.1);
+        .card-content {
+            padding: 1.5rem;
         }
 
-        .initiative-content {
-            padding: 2rem;
+        .card-content h3 {
+            color: var(--dark-blue);
         }
 
-        .initiative-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-dark);
-        }
-
-        .initiative-tags {
+        .card-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 8px;
             margin: 1rem 0;
         }
 
         .tag {
             background: rgba(74, 159, 227, 0.1);
-            color: var(--primary);
-            padding: 0.3rem 1rem;
-            border-radius: 50px;
+            color: var(--primary-blue);
+            padding: 4px 12px;
+            border-radius: 20px;
             font-size: 0.85rem;
-            font-weight: 500;
         }
 
-        /* CTA Section */
+        /* CTA */
         .cta {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            background: linear-gradient(to right, var(--dark-blue), var(--primary-blue));
             color: var(--white);
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 20%);
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
+            padding: 80px 0;
         }
 
         .cta h2 {
-            font-size: 3rem;
+            font-size: 2.2rem;
             margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             justify-content: center;
-            margin-top: 3rem;
             flex-wrap: wrap;
         }
 
         /* Footer */
         footer {
-            background: var(--dark);
+            background-color: var(--dark-blue);
             color: var(--white);
-            padding: 80px 0 30px;
-            position: relative;
+            padding: 60px 0 30px;
         }
 
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(to right, var(--secondary), var(--accent));
-        }
-
-        .footer-content {
+        .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
+            gap: 2rem;
             margin-bottom: 3rem;
         }
 
         .footer-column h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
+            color: var(--teal);
             margin-bottom: 1.5rem;
-            color: var(--secondary);
-            position: relative;
             padding-bottom: 10px;
-        }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--accent);
-        }
-
-        .footer-column p {
-            margin-bottom: 1.5rem;
-            opacity: 0.8;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-links {
@@ -591,273 +397,142 @@
 
         .footer-links li a {
             color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            transition: all 0.3s ease;
         }
 
         .footer-links li a:hover {
-            color: var(--secondary);
+            color: var(--teal);
             padding-left: 5px;
-        }
-
-        .contact-info {
-            list-style: none;
         }
 
         .contact-info li {
             display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 1.2rem;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 1rem;
         }
 
         .contact-info li i {
-            color: var(--secondary);
-            width: 20px;
+            color: var(--teal);
+            margin-top: 4px;
         }
 
-        .social-links {
+        .social-icons {
             display: flex;
             gap: 1rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
 
-        .social-links a {
+        .social-icons a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             color: var(--white);
-            text-decoration: none;
-            transition: var(--transition);
-            font-size: 1.2rem;
+            transition: all 0.3s ease;
         }
 
-        .social-links a:hover {
-            background: var(--secondary);
-            transform: translateY(-5px);
-            color: var(--dark);
+        .social-icons a:hover {
+            background: var(--teal);
+            transform: translateY(-3px);
         }
 
         .copyright {
             text-align: center;
-            padding-top: 3rem;
+            padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            opacity: 0.7;
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.9rem;
         }
 
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 1.5rem;
-            box-shadow: 0 5px 20px rgba(46, 196, 182, 0.4);
-            transition: var(--transition);
-            opacity: 0;
-            visibility: hidden;
-            z-index: 999;
-        }
-
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(46, 196, 182, 0.6);
-        }
-
-        /* Mobile Menu */
-        .mobile-menu {
-            display: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: var(--primary-dark);
-            background: none;
-            border: none;
-            padding: 5px;
-            z-index: 1001;
-        }
-
-        /* Loading Animation */
-        .loading {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--primary-dark);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
-        }
-
-        .loading.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .wave-loader {
-            width: 120px;
-            height: 90px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-        }
-
-        .wave-loader div {
-            width: 25px;
-            height: 60px;
-            background: linear-gradient(to top, var(--secondary), var(--primary-light));
-            border-radius: 5px;
-            animation: wave 1.2s ease-in-out infinite;
-        }
-
-        .wave-loader div:nth-child(2) {
-            animation-delay: -1.1s;
-        }
-
-        .wave-loader div:nth-child(3) {
-            animation-delay: -1.0s;
-        }
-
-        .wave-loader div:nth-child(4) {
-            animation-delay: -0.9s;
-        }
-
-        .wave-loader div:nth-child(5) {
-            animation-delay: -0.8s;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes wave {
-            0%, 100% {
-                height: 30px;
-            }
-            50% {
-                height: 90px;
-            }
-        }
-
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 992px) {
             .about-content {
                 grid-template-columns: 1fr;
-                gap: 3rem;
+                gap: 2rem;
             }
             
             .hero h1 {
-                font-size: 3rem;
+                font-size: 2.2rem;
             }
             
             .section-title h2 {
-                font-size: 2.4rem;
-            }
-            
-            nav ul {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 280px;
-                height: 100vh;
-                background: var(--white);
-                flex-direction: column;
-                padding: 100px 30px 30px;
-                gap: 0;
-                transition: 0.5s ease;
-                box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
-            }
-            
-            nav ul.active {
-                right: 0;
-            }
-            
-            nav ul li {
-                width: 100%;
-                margin: 0;
-            }
-            
-            nav ul li a {
-                display: block;
-                padding: 1.2rem 1.5rem;
-                border-radius: 10px;
-                margin-bottom: 0.5rem;
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
-            .mobile-menu.active i::before {
-                content: '\f00d';
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .cta h2 {
-                font-size: 2.5rem;
+                font-size: 1.8rem;
             }
         }
 
         @media (max-width: 768px) {
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 99;
+            }
+            
+            nav ul.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            nav ul li {
+                width: 100%;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 12px 20px;
+                border-radius: 8px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
             
-            .hero p {
-                font-size: 1.1rem;
+            .hero-buttons, .cta-buttons {
+                flex-direction: column;
+                align-items: center;
             }
             
-            section {
-                padding: 70px 0;
+            .hero-buttons .btn, .cta-buttons .btn {
+                width: 100%;
+                max-width: 300px;
             }
             
             .stats {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
             }
         }
 
         @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+            
             .stats {
                 grid-template-columns: 1fr;
             }
@@ -866,236 +541,169 @@
                 grid-template-columns: 1fr;
             }
             
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
+            .footer-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading" id="loading">
-        <div class="wave-loader">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-
     <!-- Header -->
-    <header id="header">
+    <header>
         <div class="container nav-container">
             <a href="#home" class="logo">
                 <i class="fas fa-water"></i>
-                <span>Ocean Guardian</span>
+                <span>Ocean Guardians</span>
             </a>
-            <button class="mobile-menu" id="mobileMenu">
+            <button class="mobile-menu-btn" id="menuBtn">
                 <i class="fas fa-bars"></i>
             </button>
             <nav>
                 <ul id="navMenu">
-                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#initiatives">Initiatives</a></li>
                     <li><a href="#get-involved">Get Involved</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" class="btn" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">Donate</a></li>
+                    <li><a href="#" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">Donate Now</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero" id="home">
-        <div class="wave-pattern"></div>
         <div class="container">
-            <div class="hero-content">
-                <h1>Protect Our Blue Planet</h1>
-                <p>Join over 50,000 ocean advocates worldwide in preserving marine ecosystems, reducing plastic pollution, and safeguarding our seas for future generations.</p>
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="#get-involved" class="btn">
-                        <i class="fas fa-hands-helping"></i>
-                        Join Our Mission
-                    </a>
-                    <a href="#initiatives" class="btn btn-outline">
-                        <i class="fas fa-play-circle"></i>
-                        Watch Our Work
-                    </a>
-                </div>
+            <h1>Protect Our Blue Planet</h1>
+            <p>Join over 50,000 ocean advocates worldwide in preserving marine ecosystems, reducing plastic pollution, and safeguarding our seas for future generations.</p>
+            <div class="hero-buttons">
+                <a href="#get-involved" class="btn">Join Us</a>
+                <a href="#initiatives" class="btn btn-outline">Learn More</a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About -->
     <section id="about">
         <div class="container">
             <div class="section-title">
-                <h2>Our Ocean Mission</h2>
-                <p>For over a decade, we've been at the forefront of marine conservation, combining scientific research with community action to protect our seas.</p>
+                <h2>About Ocean Guardians</h2>
+                <p>Since 2012, we've been dedicated to marine conservation through scientific research, community action, and policy advocacy.</p>
             </div>
             <div class="about-content">
                 <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1566024287286-457246b56b8a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Marine conservation team working on coral reef restoration">
+                    <img src="https://images.unsplash.com/photo-1566024287286-457246b56b8a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Marine conservation team at work">
                 </div>
                 <div class="about-text">
-                    <h3>Guardians of the Sea Since 2012</h3>
-                    <p>Ocean Guardian emerged from a passion for preserving our planet's most vital ecosystem. Today, we're a global movement driving tangible change for our oceans.</p>
+                    <h3>Our Mission</h3>
+                    <p>Ocean Guardians is a non-profit organization dedicated to protecting marine ecosystems through scientific research, community engagement, and policy advocacy to reduce ocean pollution and preserve marine biodiversity.</p>
                     
-                    <div class="about-features">
+                    <div class="feature-list">
                         <div class="feature-item">
                             <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Science-Based Conservation</h4>
-                                <p>Our marine protection strategies are informed by cutting-edge oceanographic research.</p>
-                            </div>
+                            <span>Science-Based Conservation Strategies</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Coastal Community Empowerment</h4>
-                                <p>We partner with coastal communities to develop sustainable livelihoods that protect marine resources.</p>
-                            </div>
+                            <span>Community-Driven Action</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Measurable Impact</h4>
-                                <p>Every donation and volunteer hour contributes to quantifiable improvements in ocean health.</p>
-                            </div>
+                            <span>Transparent Impact Reporting</span>
                         </div>
                     </div>
                     
-                    <a href="#contact" class="btn">
-                        <i class="fas fa-handshake"></i>
-                        Partner With Us
-                    </a>
+                    <a href="#contact" class="btn">Contact Us</a>
                 </div>
             </div>
             
             <div class="stats">
-                <div class="stat-item">
+                <div class="stat-box">
                     <i class="fas fa-fish"></i>
-                    <h3 class="counter" data-target="1250000">0</h3>
+                    <h3>1,250,000+</h3>
                     <p>Marine Animals Protected</p>
                 </div>
-                <div class="stat-item">
+                <div class="stat-box">
                     <i class="fas fa-recycle"></i>
-                    <h3 class="counter" data-target="850000">0</h3>
+                    <h3>850,000+</h3>
                     <p>Pounds of Plastic Removed</p>
                 </div>
-                <div class="stat-item">
+                <div class="stat-box">
                     <i class="fas fa-globe-americas"></i>
-                    <h3 class="counter" data-target="65">0</h3>
+                    <h3>65+</h3>
                     <p>Coastal Countries Reached</p>
                 </div>
-                <div class="stat-item">
-                    <i class="fas fa-award"></i>
-                    <h3 class="counter" data-target="28">0</h3>
-                    <p>Conservation Awards</p>
+                <div class="stat-box">
+                    <i class="fas fa-users"></i>
+                    <h3>50,000+</h3>
+                    <p>Global Volunteers</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Initiatives Section -->
+    <!-- Initiatives -->
     <section class="initiatives" id="initiatives">
-        <div class="wave-pattern"></div>
         <div class="container">
             <div class="section-title">
-                <h2>Our Ocean Initiatives</h2>
-                <p>Discover the impactful programs that are making a tangible difference for marine ecosystems worldwide.</p>
+                <h2>Our Conservation Initiatives</h2>
+                <p>Through these key programs, we're creating positive marine conservation impact worldwide.</p>
             </div>
             <div class="initiatives-grid">
                 <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Coral reef restoration project with divers">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Coral reef restoration">
                     </div>
-                    <div class="initiative-content">
+                    <div class="card-content">
                         <h3>Coral Reef Restoration</h3>
-                        <div class="initiative-tags">
-                            <span class="tag">Marine Biodiversity</span>
-                            <span class="tag">Ecosystem Health</span>
-                            <span class="tag">Climate Resilience</span>
+                        <div class="card-tags">
+                            <span class="tag">Marine Ecology</span>
+                            <span class="tag">Biodiversity</span>
                         </div>
-                        <p>Restoring vital coral ecosystems by propagating resilient species and implementing marine protected areas.</p>
-                        <div style="margin-top: 1.5rem;">
-                            <a href="#" class="btn" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">
-                                <i class="fas fa-coral"></i>
-                                Support Reefs
-                            </a>
-                        </div>
+                        <p>Implementing coral reef restoration projects in key marine areas, cultivating heat-resistant coral species, and restoring damaged coral ecosystems.</p>
+                        <a href="#" class="btn" style="padding: 8px 20px; font-size: 0.9rem; margin-top: 10px;">Learn More</a>
                     </div>
                 </div>
                 <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1589656966895-2f33e7653819?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Ocean cleanup team removing plastic from beach">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1589656966895-2f33e7653819?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Beach cleanup">
                     </div>
-                    <div class="initiative-content">
-                        <h3>Plastic-Free Oceans</h3>
-                        <div class="initiative-tags">
+                    <div class="card-content">
+                        <h3>Ocean Plastic Cleanup</h3>
+                        <div class="card-tags">
                             <span class="tag">Pollution Reduction</span>
                             <span class="tag">Community Action</span>
-                            <span class="tag">Circular Economy</span>
                         </div>
-                        <p>Removing plastic waste from coastlines and advocating for policies to reduce single-use plastics globally.</p>
-                        <div style="margin-top: 1.5rem;">
-                            <a href="#" class="btn" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">
-                                <i class="fas fa-recycle"></i>
-                                Join Cleanup
-                            </a>
-                        </div>
+                        <p>Organizing global coastline cleanups, developing innovative technologies to collect ocean plastic, and advocating for reduced single-use plastics.</p>
+                        <a href="#" class="btn" style="padding: 8px 20px; font-size: 0.9rem; margin-top: 10px;">Learn More</a>
                     </div>
                 </div>
                 <div class="initiative-card">
-                    <div class="initiative-img">
-                        <img src="https://images.unsplash.com/photo-1542729173-07c8d7767c9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Marine protected area with diverse sea life">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1542729173-07c8d7767c9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Marine protected area">
                     </div>
-                    <div class="initiative-content">
+                    <div class="card-content">
                         <h3>Marine Protected Areas</h3>
-                        <div class="initiative-tags">
+                        <div class="card-tags">
                             <span class="tag">Habitat Protection</span>
-                            <span class="tag">Sustainable Fishing</span>
-                            <span class="tag">Policy Advocacy</span>
+                            <span class="tag">Sustainable Fisheries</span>
                         </div>
-                        <p>Establishing and maintaining protected ocean zones where marine life can thrive without human interference.</p>
-                        <div style="margin-top: 1.5rem;">
-                            <a href="#" class="btn" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">
-                                <i class="fas fa-shield-alt"></i>
-                                Protect Habitats
-                            </a>
-                        </div>
+                        <p>Advocating for and managing marine protected areas to safeguard critical ocean habitats and promote sustainable fishing practices.</p>
+                        <a href="#" class="btn" style="padding: 8px 20px; font-size: 0.9rem; margin-top: 10px;">Learn More</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA -->
     <section class="cta" id="get-involved">
         <div class="container">
-            <div class="cta-content">
-                <h2>The Sea Needs You Now</h2>
-                <p>Whether you donate, volunteer, or spread awareness, every action brings us closer to healthy oceans. Join thousands making waves for change today.</p>
-                <div class="cta-buttons">
-                    <a href="#" class="btn">
-                        <i class="fas fa-heart"></i>
-                        Donate Now
-                    </a>
-                    <a href="#contact" class="btn btn-outline">
-                        <i class="fas fa-user-plus"></i>
-                        Volunteer Today
-                    </a>
-                    <a href="#" class="btn btn-outline">
-                        <i class="fas fa-newspaper"></i>
-                        Ocean Newsletter
-                    </a>
-                </div>
+            <h2>The Ocean Needs Your Help</h2>
+            <p>Whether donating, volunteering, or spreading awareness, every action contributes to ocean conservation. Join us today and become an Ocean Guardian!</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn">Donate Now</a>
+                <a href="#contact" class="btn btn-outline">Become a Volunteer</a>
             </div>
         </div>
     </section>
@@ -1103,36 +711,35 @@
     <!-- Footer -->
     <footer id="contact">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-grid">
                 <div class="footer-column">
-                    <h3>Ocean Guardian</h3>
-                    <p>We're building a global community dedicated to marine conservation, sustainable fisheries, and creating healthier oceans for all life on Earth.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Connect on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Watch on YouTube"><i class="fab fa-youtube"></i></a>
+                    <h3>Ocean Guardians</h3>
+                    <p>We're dedicated to protecting marine ecosystems, promoting sustainability, and leaving healthy oceans for future generations.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="#initiatives"><i class="fas fa-chevron-right"></i> Our Initiatives</a></li>
-                        <li><a href="#get-involved"><i class="fas fa-chevron-right"></i> Get Involved</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Research Reports</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#initiatives">Initiatives</a></li>
+                        <li><a href="#get-involved">Get Involved</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Our Programs</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-coral"></i> Coral Restoration</a></li>
-                        <li><a href="#"><i class="fas fa-recycle"></i> Plastic Cleanup</a></li>
-                        <li><a href="#"><i class="fas fa-fish"></i> Marine Wildlife</a></li>
-                        <li><a href="#"><i class="fas fa-graduation-cap"></i> Ocean Education</a></li>
-                        <li><a href="#"><i class="fas fa-ship"></i> Sustainable Fishing</a></li>
+                        <li><a href="#">Coral Restoration</a></li>
+                        <li><a href="#">Plastic Cleanup</a></li>
+                        <li><a href="#">Marine Protection</a></li>
+                        <li><a href="#">Ocean Education</a></li>
+                        <li><a href="#">Sustainable Fisheries</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -1140,88 +747,47 @@
                     <ul class="contact-info">
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <strong>Global Headquarters</strong>
-                                <p>456 Oceanview Drive<br>San Diego, CA 92101</p>
-                            </div>
+                            <span>123 Ocean View Drive, San Diego, CA 92101</span>
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
-                            <div>
-                                <strong>Phone</strong>
-                                <p>+1 (555) 123-4567</p>
-                            </div>
+                            <span>+1 (555) 123-4567</span>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <div>
-                                <strong>Email</strong>
-                                <p>info@oceanguardian.org</p>
-                            </div>
+                            <span>info@oceanguardians.org</span>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Ocean Guardian. All rights reserved. | <a href="#" style="color: var(--secondary); text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: var(--secondary); text-decoration: none;">Terms of Service</a></p>
+                <p>&copy; 2025 Ocean Guardians. All rights reserved | <a href="#" style="color: var(--teal);">Privacy Policy</a> | <a href="#" style="color: var(--teal);">Terms of Service</a></p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">This website is for educational and awareness purposes. All statistics are illustrative.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <a href="#home" class="back-to-top" id="backToTop">
-        <i class="fas fa-chevron-up"></i>
-    </a>
-
     <script>
-        // Loading Screen
-        window.addEventListener('load', function() {
-            const loading = document.getElementById('loading');
-            setTimeout(() => {
-                loading.classList.add('hidden');
-            }, 1000);
-        });
-
-        // Mobile Menu Toggle
-        const mobileMenu = document.getElementById('mobileMenu');
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
         const navMenu = document.getElementById('navMenu');
         
-        mobileMenu.addEventListener('click', function() {
+        menuBtn.addEventListener('click', function() {
             navMenu.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            menuBtn.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
         });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!navMenu.contains(event.target) && !mobileMenu.contains(event.target)) {
+        
+        // Close menu when clicking links
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', function() {
                 navMenu.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = '';
-            }
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
         });
-
-        // Header scroll effect
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Back to Top Button
-        const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
-        });
-
-        // Smooth scrolling with offset
+        
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1231,19 +797,8 @@
                 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    // Close mobile menu
-                    navMenu.classList.remove('active');
-                    mobileMenu.classList.remove('active');
-                    document.body.style.overflow = '';
-                    
-                    // Update active nav link
-                    document.querySelectorAll('nav ul li a').forEach(link => {
-                        link.classList.remove('active');
-                    });
-                    this.classList.add('active');
-                    
-                    // Calculate scroll position
-                    const headerHeight = header.offsetHeight;
+                    // Calculate scroll position (accounting for fixed header)
+                    const headerHeight = document.querySelector('header').offsetHeight;
                     const targetPosition = targetElement.offsetTop - headerHeight;
                     
                     // Smooth scroll
@@ -1254,63 +809,28 @@
                 }
             });
         });
-
-        // Intersection Observer for counter animation
-        const counters = document.querySelectorAll('.counter');
-        const speed = 200;
         
-        const startCounter = (counter) => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
-            const increment = target / speed;
+        // Simple scroll detection for active menu highlighting
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('#navMenu a[href^="#"]');
             
-            if (count < target) {
-                counter.innerText = Math.ceil(count + increment);
-                setTimeout(() => startCounter(counter), 10);
-            } else {
-                counter.innerText = target.toLocaleString();
-            }
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    startCounter(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        counters.forEach(counter => {
-            observer.observe(counter);
-        });
-
-        // Active navigation based on scroll position
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('nav ul li a');
-        
-        window.addEventListener('scroll', () => {
-            let current = '';
+            let currentSection = '';
+            
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
+                if (window.scrollY >= (sectionTop - 100)) {
+                    currentSection = section.getAttribute('id');
                 }
             });
-
+            
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
+                if (link.getAttribute('href') === `#${currentSection}`) {
                     link.classList.add('active');
                 }
             });
-        });
-
-        // Parallax effect for hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
         });
     </script>
 </body>
